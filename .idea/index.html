@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <hi>
+Este ejemplo demuestra cómo implementar los principios SOLID 
+en un escenario de procesamiento de pagos en JavaScript.
+
+1.SRP (Principio de Responsabilidad Única):
+Cada clase tiene una única responsabilidad. PagoConTarjeta 
+maneja pagos con tarjeta de crédito, PagoConPayPal maneja 
+pagos con PayPal, y ProcesadorDePagos procesa pagos utilizando 
+un método de pago.
+
+2.OCP (Principio de Abierto/Cerrado):
+Las clases PagoConTarjeta y PagoConPayPal pueden ser 
+extendidas para soportar nuevos métodos de pago sin modificar 
+las clases existentes. Si quisieras agregar otro método de pago,
+simplemente crearías una nueva clase que extienda MetodoDePago.
+
+3.LSP (Principio de Sustitución de Liskov):
+PagoConTarjeta y PagoConPayPal pueden sustituir 
+a MetodoDePago en ProcesadorDePagos sin problemas.
+ ProcesadorDePagos funciona correctamente independientemente del método de pago específico.
+
+4.ISP (Principio de Segregación de Interfaces):
+La interfaz MetodoDePago sólo tiene un método procesarPago, 
+que es el único método necesario para procesar un pago.
+ No se obliga a las clases a implementar métodos que no usan.
+
+5.DIP (Principio de Inversión de Dependencias):
+ProcesadorDePagos depende de la abstracción MetodoDePago en
+lugar de depender de clases concretas como PagoConTarjeta o 
+PagoConPayPal. Esto permite cambiar el método de pago sin modificar ProcesadorDePagos.
+    </hi>
+</head>
+<body>
+    <script src="EJEMPLOSOLID.JS"></script>
+</body>
+</html>
